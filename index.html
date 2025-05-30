@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Python CSV Tutorial</title>
+  <title></title>
 
   <!-- Reveal.js Styles -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/solarized.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/sky.css">
 
   <!-- Highlight.js Styles -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/github-dark.min.css">
@@ -32,7 +32,7 @@
       <section data-background-color="#002b36">
         <h1 style="color: #b58900;">Python Tutorial</h1>
         <h3 style="color: #839496;">Loading and Manipulating CSV Files</h3>
-        <p class="footer">Presented by You</p>
+        <p class="footer"></p>
       </section>
 
       <!-- Step 0: Requirements -->
@@ -41,12 +41,12 @@
         <ul>
           <li class="fragment">
             <strong>CSV File</strong>: A file with comma-separated values.<br>
-            <span style="font-size: 80%;">(e.g., sales data, student grades, etc.)</span>
+            <span style="font-size: 80%;">(e.g., sales data, production data, etc.)</span>
           </li>
           <li class="fragment">
             <strong>Python Environment</strong>:
             <ul>
-              <li>Jupyter Notebook</li>
+              <li>Jupyter Notebook (Anaconda)</li>
               <li>Spyder (Anaconda)</li>
               <li>Google Colab (Online, Free)</li>
             </ul>
@@ -67,7 +67,7 @@ import pandas as pd
         <h2 style="color: #2aa198;">Step 2: Load a CSV File</h2>
         <pre><code class="language-python">
 # Load CSV into a DataFrame
-df = pd.read_csv('data.csv')
+df = pd.read_csv('business_production_data.csv')
 
 # Display the first 5 rows
 print(df.head())
@@ -78,8 +78,8 @@ print(df.head())
       <section data-background="#073642">
         <h2 style="color: #2aa198;">Step 3: Data Manipulation</h2>
         <ul>
-          <li class="fragment">Show DataFrame columns</li>
-          <li class="fragment">Filter rows where 'Sales' > 1000</li>
+          <li class="fragment">Show columns</li>
+          <li class="fragment">Filter rows where 'SalePricePerUnit' > 1000</li>
           <li class="fragment">Print filtered data</li>
         </ul>
         <pre><code class="language-python">
@@ -87,9 +87,9 @@ print(df.head())
 print(df.columns)
 
 # Filter rows
-high_sales = df[df['Sales'] > 1000]
+high_SalePricePerUnit = df[df['SalePricePerUnit'] > 1000]
 
-print(high_sales)
+print(high_SalePricePerUnit)
         </code></pre>
       </section>
 
@@ -98,15 +98,15 @@ print(high_sales)
         <h2 style="color: #2aa198;">Step 4: Save to a New CSV</h2>
         <pre><code class="language-python">
 # Save filtered data to a new CSV
-high_sales.to_csv('high_sales.csv', index=False)
+high_SalePricePerUnit.to_csv('high_SalePricePerUnit.csv', index=False)
         </code></pre>
       </section>
 
       <!-- Thank You Slide -->
       <section data-background-color="#073642">
-        <h2 style="color: #b58900;">Thank You!</h2>
-        <p style="color: #839496;">Questions?</p>
-        <p class="footer">Python CSV Tutorial</p>
+        <h2 style="color: #b58900;"></h2>
+        <p style="color: #839496;">Questions?</h2>
+        <p class="footer"></p>
       </section>
 
     </div>
