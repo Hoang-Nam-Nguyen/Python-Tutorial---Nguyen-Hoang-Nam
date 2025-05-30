@@ -1,35 +1,51 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <title>Python CSV Tutorial</title>
+
+  <!-- Reveal.js Styles -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/solarized.css">
 
-  <!-- Highlight.js for code syntax highlighting -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/default.min.css">
+  <!-- Highlight.js Styles -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/github-dark.min.css">
+
+  <style>
+    /* Optional Footer Style */
+    .footer {
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      text-align: center;
+      font-size: 12px;
+      color: #999;
+    }
+  </style>
 </head>
 <body>
+
   <div class="reveal">
     <div class="slides">
 
       <!-- Title Slide -->
-      <section>
-        <h1>Python Tutorial</h1>
-        <h3>Loading and Manipulating CSV Files</h3>
+      <section data-background-color="#002b36">
+        <h1 style="color: #b58900;">Python Tutorial</h1>
+        <h3 style="color: #839496;">Loading and Manipulating CSV Files</h3>
+        <p class="footer">Presented by You</p>
       </section>
 
       <!-- Step 1: Import Libraries -->
-      <section>
-        <h2>Step 1: Import Libraries</h2>
+      <section data-background-color="#073642">
+        <h2 style="color: #2aa198;">Step 1: Import Libraries</h2>
         <pre><code class="language-python">
 import pandas as pd
         </code></pre>
       </section>
 
       <!-- Step 2: Load CSV -->
-      <section>
-        <h2>Step 2: Load a CSV File</h2>
+      <section data-background="#002b36">
+        <h2 style="color: #2aa198;">Step 2: Load a CSV File</h2>
         <pre><code class="language-python">
 # Load CSV into a DataFrame
 df = pd.read_csv('data.csv')
@@ -40,13 +56,18 @@ print(df.head())
       </section>
 
       <!-- Step 3: Basic Data Manipulation -->
-      <section>
-        <h2>Step 3: Data Manipulation</h2>
+      <section data-background="#073642">
+        <h2 style="color: #2aa198;">Step 3: Data Manipulation</h2>
+        <ul>
+          <li class="fragment">Show DataFrame columns</li>
+          <li class="fragment">Filter rows where 'Sales' > 1000</li>
+          <li class="fragment">Print filtered data</li>
+        </ul>
         <pre><code class="language-python">
 # Show columns
 print(df.columns)
 
-# Filter rows where column 'Sales' > 1000
+# Filter rows
 high_sales = df[df['Sales'] > 1000]
 
 print(high_sales)
@@ -54,28 +75,34 @@ print(high_sales)
       </section>
 
       <!-- Step 4: Save the Result -->
-      <section>
-        <h2>Step 4: Save to a New CSV</h2>
+      <section data-background-color="#002b36">
+        <h2 style="color: #2aa198;">Step 4: Save to a New CSV</h2>
         <pre><code class="language-python">
-# Save the filtered data to a new CSV
+# Save filtered data to a new CSV
 high_sales.to_csv('high_sales.csv', index=False)
         </code></pre>
       </section>
 
       <!-- Thank You Slide -->
-      <section>
-        <h2>Thank You!</h2>
-        <p>Questions?</p>
+      <section data-background-color="#073642">
+        <h2 style="color: #b58900;">Thank You!</h2>
+        <p style="color: #839496;">Questions?</p>
+        <p class="footer">Python CSV Tutorial</p>
       </section>
 
     </div>
   </div>
 
+  <!-- Reveal.js and Highlight.js -->
   <script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/lib/highlight.min.js"></script>
   <script>
-    Reveal.initialize();
+    Reveal.initialize({
+      transition: 'convex', // slide, fade, convex, concave, zoom
+      plugins: []
+    });
     hljs.highlightAll();
   </script>
+
 </body>
 </html>
