@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title></title>
+  <title>Python CSV Tutorial</title>
 
   <!-- Reveal.js Styles -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css">
@@ -12,7 +12,6 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/github-dark.min.css">
 
   <style>
-    /* Optional Footer Style */
     .footer {
       position: absolute;
       bottom: 10px;
@@ -20,6 +19,13 @@
       text-align: center;
       font-size: 12px;
       color: #999;
+    }
+    img {
+      max-width: 80%;
+      height: auto;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
     }
   </style>
 </head>
@@ -54,6 +60,20 @@
         </ul>
       </section>
 
+      <!-- Insert Screenshot of CSV File -->
+      <section data-background-color="#073642">
+        <h2 style="color: #b58900;">Sample CSV File</h2>
+        <p style="color: #839496;">This is how a CSV file looks when opened:</p>
+        <img src="csv_sample_screenshot.png" alt="Sample CSV Screenshot">
+      </section>
+
+      <!-- Insert Screenshot of Jupyter Notebook -->
+      <section data-background-color="#073642">
+        <h2 style="color: #b58900;">Python Environment: Jupyter Notebook</h2>
+        <p style="color: #839496;">This is the Jupyter Notebook where we will run Python code:</p>
+        <img src="jupyter_notebook_screenshot.png" alt="Jupyter Notebook Screenshot">
+      </section>
+
       <!-- Step 1: Import Libraries -->
       <section data-background-color="#073642">
         <h2 style="color: #b58900;">Step 1: Import Libraries</h2>
@@ -69,7 +89,7 @@ import pandas as pd
 # Verify the working directory and ensure the CSV file is located there
 import os
 print(os.getcwd())
-          
+
 # Load CSV into a DataFrame
 df = pd.read_csv('business_production_data.csv')
 
@@ -108,8 +128,8 @@ high_SalePricePerUnit.to_csv('high_SalePricePerUnit.csv', index=False)
 
       <!-- Thank You Slide -->
       <section data-background-color="#073642">
-        <h2 style="color: #b58900;"></h2>
-        <h2 >Questions?</h2>
+        <h2 style="color: #b58900;">Thank You!</h2>
+        <h2>Questions?</h2>
         <p class="footer"></p>
       </section>
 
@@ -121,7 +141,7 @@ high_SalePricePerUnit.to_csv('high_SalePricePerUnit.csv', index=False)
   <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/lib/highlight.min.js"></script>
   <script>
     Reveal.initialize({
-      transition: 'convex', // slide, fade, convex, concave, zoom
+      transition: 'convex',
       plugins: []
     });
     hljs.highlightAll();
