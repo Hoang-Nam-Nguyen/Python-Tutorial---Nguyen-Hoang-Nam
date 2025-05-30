@@ -2,28 +2,80 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>My Presentation</title>
+  <title>Python CSV Tutorial</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/black.css">
+
+  <!-- Highlight.js for code syntax highlighting -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/default.min.css">
 </head>
 <body>
   <div class="reveal">
     <div class="slides">
-      <section>Welcome to My Presentation</section>
-      <section>Slide 2: About Me</section>
+
+      <!-- Title Slide -->
       <section>
-        <h2>Step-by-Step</h2>
-        <p class="fragment">First point</p>
-        <p class="fragment">Second point</p>
-        <p class="fragment">Third point</p>
+        <h1>Python CSV Tutorial</h1>
+        <h3>Loading and Manipulating CSV Files</h3>
       </section>
-      <section>Thank You!</section>
+
+      <!-- Step 1: Import Libraries -->
+      <section>
+        <h2>Step 1: Import Libraries</h2>
+        <pre><code class="language-python">
+import pandas as pd
+        </code></pre>
+      </section>
+
+      <!-- Step 2: Load CSV -->
+      <section>
+        <h2>Step 2: Load a CSV File</h2>
+        <pre><code class="language-python">
+# Load CSV into a DataFrame
+df = pd.read_csv('data.csv')
+
+# Display the first 5 rows
+print(df.head())
+        </code></pre>
+      </section>
+
+      <!-- Step 3: Basic Data Manipulation -->
+      <section>
+        <h2>Step 3: Data Manipulation</h2>
+        <pre><code class="language-python">
+# Show columns
+print(df.columns)
+
+# Filter rows where column 'Sales' > 1000
+high_sales = df[df['Sales'] > 1000]
+
+print(high_sales)
+        </code></pre>
+      </section>
+
+      <!-- Step 4: Save the Result -->
+      <section>
+        <h2>Step 4: Save to a New CSV</h2>
+        <pre><code class="language-python">
+# Save the filtered data to a new CSV
+high_sales.to_csv('high_sales.csv', index=False)
+        </code></pre>
+      </section>
+
+      <!-- Thank You Slide -->
+      <section>
+        <h2>Thank You!</h2>
+        <p>Questions?</p>
+      </section>
+
     </div>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/lib/highlight.min.js"></script>
   <script>
     Reveal.initialize();
+    hljs.highlightAll();
   </script>
 </body>
 </html>
