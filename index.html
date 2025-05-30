@@ -66,6 +66,10 @@ import pandas as pd
       <section data-background="#002b36">
         <h2 style="color: #b58900;">Step 2: Load a CSV File</h2>
         <pre><code class="language-python">
+# Verify the working directory and ensure the CSV file is located there
+import os
+print(os.getcwd())
+          
 # Load CSV into a DataFrame
 df = pd.read_csv('business_production_data.csv')
 
