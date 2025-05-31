@@ -38,6 +38,7 @@
       <section data-background-color="#002b36">
         <h1 style="color: #b58900;">Python Tutorial</h1>
         <h3 style="color: #839496;">Loading and Manipulating CSV Files</h3>
+        <p style="color: #839496;">Hoang Nam Nguyen</p>
         <p class="footer"></p>
       </section>
 
@@ -65,6 +66,7 @@
         <h2 style="color: #b58900;">Import Libraries</h2>
         <pre><code class="language-python">
 import pandas as pd
+import os
         </code></pre>
       </section>
 
@@ -72,40 +74,85 @@ import pandas as pd
       <section data-background="#002b36">
         <h2 style="color: #b58900;">Load a CSV File</h2>
         <pre><code class="language-python">
-# Verify the working directory and ensure the CSV file is located there
-import os
+# Check the current working directory
 print(os.getcwd())
 
-# Load CSV into a DataFrame
+# Basic CSV loading
 df = pd.read_csv('business_production_data.csv')
 
-# Display the first 5 rows
+# Display first 5 rows
 print(df.head(5))
         </code></pre>
       </section>
 
-      <!-- Step 3: Basic Data Manipulation -->
+      <!-- Step 3: Basic Exploration -->
       <section data-background="#073642">
-        <h2 style="color: #b58900;"> Data Manipulation</h2>
-        <ul>
-          <li class="fragment">Show columns</li>
-          <li class="fragment">Filter rows where 'SalePricePerUnit' > 1000</li>
-          <li class="fragment">Print filtered data</li>
-        </ul>
+        <h2 style="color: #b58900;">Basic Data Exploration</h2>
         <pre><code class="language-python">
 # Show columns
 print(df.columns)
 
-# Filter rows
-high_SalePricePerUnit = df[df['SalePricePerUnit'] > 1000]
+# Summary statistics
+print(df.describe())
 
-print(high_SalePricePerUnit)
+# Data types and missing values
+print(df.info())
+        </code></pre>
+      </section>
+
+      <!-- Step 4: Data Filtering -->
+      <section data-background="#073642">
+        <h2 style="color: #b58900;">Data Filtering Example</h2>
+        <pre><code class="language-python">
+# Filter rows with 'SalePricePerUnit' > 1000
+high_price = df[df['SalePricePerUnit'] > 1000]
+
+print(high_price.head())
+
+# Save filtered data
+high_price.to_csv('high_price.csv', index=False)
+        </code></pre>
+      </section>
+
+      <!-- Step 5: Advanced CSV Loading -->
+      <section data-background="#002b36">
+        <h2 style="color: #b58900;">Advanced CSV Loading Options</h2>
+        <pre><code class="language-python">
+# Load only specific columns
+df_selected = pd.read_csv('business_production_data.csv', usecols=['Product', 'SalePricePerUnit'])
+
+# Load only first 100 rows
+df_small = pd.read_csv('business_production_data.csv', nrows=100)
+
+# Specify delimiter if not comma
+df_tab = pd.read_csv('business_data.tsv', delimiter='\t')
+
+# Parse dates automatically
+df_date = pd.read_csv('sales_data.csv', parse_dates=['OrderDate'])
+
+# Handle missing values
+df_na = pd.read_csv('business_data.csv', na_values=['?', 'NA', 'Missing'])
+        </code></pre>
+      </section>
+
+      <!-- Step 6: dtype Option -->
+      <section data-background="#002b36">
+        <h2 style="color: #b58900;">Set Data Types with dtype</h2>
+        <pre><code class="language-python">
+# Enforce data types when loading
+df_types = pd.read_csv(
+    'business_production_data.csv',
+    dtype={'SalePricePerUnit': float, 'Quantity': int}
+)
+
+print(df_types.dtypes)
         </code></pre>
       </section>
 
       <!-- Thank You Slide -->
       <section data-background-color="#073642">
         <h2>Questions?</h2>
+        <p style="color: #839496;">Hoang Nam Nguyen</p>
         <p class="footer"></p>
       </section>
 
