@@ -43,7 +43,7 @@
 
       <!-- Step 0: Requirements -->
       <section data-background-color="#073642">
-        <h2 style="color: #b58900;">Step 0: What You Need</h2>
+        <h2 style="color: #b58900;">What You Need</h2>
         <ul>
           <li class="fragment">
             <strong>CSV File</strong>: A file with comma-separated values.<br>
@@ -60,21 +60,9 @@
         </ul>
       </section>
 
-      <!-- Insert Screenshot of CSV File -->
-      <section data-background-color="#073642">
-        <h2 style="color: #b58900;">A Sample CSV File</h2>
-        <img src="csv_sample_screenshot.png" alt="Sample CSV Screenshot">
-      </section>
-
-      <!-- Insert Screenshot of Jupyter Notebook -->
-      <section data-background-color="#073642">
-        <h2 style="color: #b58900;">Jupyter Notebook</h2>
-        <img src="jupyter_notebook_screenshot.png" alt="Jupyter Notebook Screenshot">
-      </section>
-
       <!-- Step 1: Import Libraries -->
       <section data-background-color="#073642">
-        <h2 style="color: #b58900;">Step 1: Import Libraries</h2>
+        <h2 style="color: #b58900;">Import Libraries</h2>
         <pre><code class="language-python">
 import pandas as pd
         </code></pre>
@@ -82,7 +70,7 @@ import pandas as pd
 
       <!-- Step 2: Load CSV -->
       <section data-background="#002b36">
-        <h2 style="color: #b58900;">Step 2: Load a CSV File</h2>
+        <h2 style="color: #b58900;">Load a CSV File</h2>
         <pre><code class="language-python">
 # Verify the working directory and ensure the CSV file is located there
 import os
@@ -98,7 +86,7 @@ print(df.head(5))
 
       <!-- Step 3: Basic Data Manipulation -->
       <section data-background="#073642">
-        <h2 style="color: #b58900;">Step 3: Data Manipulation</h2>
+        <h2 style="color: #b58900;"> Data Manipulation</h2>
         <ul>
           <li class="fragment">Show columns</li>
           <li class="fragment">Filter rows where 'SalePricePerUnit' > 1000</li>
@@ -112,15 +100,6 @@ print(df.columns)
 high_SalePricePerUnit = df[df['SalePricePerUnit'] > 1000]
 
 print(high_SalePricePerUnit)
-        </code></pre>
-      </section>
-
-      <!-- Step 4: Save the Result -->
-      <section data-background-color="#002b36">
-        <h2 style="color: #b58900;">Step 4: Save to a New CSV</h2>
-        <pre><code class="language-python">
-# Save filtered data to a new CSV
-high_SalePricePerUnit.to_csv('high_SalePricePerUnit.csv', index=False)
         </code></pre>
       </section>
 
