@@ -140,9 +140,27 @@ sales_df = pd.read_csv('sales_data.csv', parse_dates=['OrderDate'])
         </ul>
       </section>
 
+      <!-- Bonus: GroupBy -->
+      <section data-background="#002b36">
+        <h2 style="color: #b58900;">Bonus: GroupBy Example</h2>
+        <pre><code class="language-python">
+# Average SalePricePerUnit by Category
+avg_price = df.groupby('Category')['SalePricePerUnit'].mean()
+
+print(avg_price)
+        </code></pre>
+        <p style="font-size: 80%; color: #839496;">Useful for reporting average sales by category</p>
+      </section>
+
       <!-- Thank You Slide -->
-      <section data-background-color="#073642">
-        <h2 style="color: #b58900;">Questions?</h2>
+      <section data-background="#073642">
+        <h2 style="color: #b58900;">Summary and Questions</h2>
+        <ul>
+          <li class="fragment">Loading CSV files is the first step in business analytics.</li>
+          <li class="fragment">Basic exploration helps understand data quality and structure.</li>
+          <li class="fragment">Filtering and aggregation provide insights for business decisions.</li>
+        </ul>
+        <p style="color: #839496; font-size: 120%;">Any questions?</p>
       </section>
 
     </div>
