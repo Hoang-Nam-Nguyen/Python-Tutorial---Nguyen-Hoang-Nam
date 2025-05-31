@@ -37,55 +37,61 @@
       <!-- Title Slide -->
       <section data-background-color="#002b36">
         <h1 style="color: #b58900;">Python Tutorial</h1>
-        <h3 style="color: #839496;">Loading and Manipulating CSV Files</h3>
+        <h3 style="color: #839496;">Loading and Exploring CSV Files for Business Analytics</h3>
         <p style="color: #839496;">Hoang Nam Nguyen</p>
-        <p class="footer"></p>
       </section>
 
-      <!-- Step 0: Requirements -->
+      <!-- Why CSV Files -->
+      <section data-background-color="#073642">
+        <h2 style="color: #b58900;">Why CSV Files Matter</h2>
+        <ul>
+          <li class="fragment">80% of business data is stored in Excel/CSV files</li>
+          <li class="fragment">Typical data: sales, production, customer records</li>
+          <li class="fragment">First step in business analytics: loading and exploring data</li>
+        </ul>
+      </section>
+
+      <!-- What You Need -->
       <section data-background-color="#073642">
         <h2 style="color: #b58900;">What You Need</h2>
         <ul>
           <li class="fragment">
-            <strong>CSV File</strong>: A file with comma-separated values.<br>
-            <span style="font-size: 80%;">(e.g., sales data, production data, etc.)</span>
+            <strong>CSV File</strong>: Common format for business data
           </li>
           <li class="fragment">
             <strong>Python Environment</strong>:
             <ul>
-              <li>Jupyter Notebook (Anaconda)</li>
-              <li>Spyder (Anaconda)</li>
+              <li>Jupyter Notebook</li>
               <li>Google Colab (Online, Free)</li>
             </ul>
           </li>
         </ul>
       </section>
 
-      <!-- Step 1: Import Libraries -->
+      <!-- Import Libraries -->
       <section data-background-color="#073642">
         <h2 style="color: #b58900;">Import Libraries</h2>
         <pre><code class="language-python">
 import pandas as pd
 import os
         </code></pre>
+        <p style="font-size: 80%; color: #839496;">Pandas: powerful data analysis library in Python</p>
       </section>
 
-      <!-- Step 2: Load CSV -->
+      <!-- Load CSV -->
       <section data-background="#002b36">
         <h2 style="color: #b58900;">Load a CSV File</h2>
         <pre><code class="language-python">
-# Check the current working directory
+# Check working directory
 print(os.getcwd())
 
-# Basic CSV loading
+# Load CSV file
 df = pd.read_csv('business_production_data.csv')
-
-# Display first 5 rows
-print(df.head(5))
         </code></pre>
+        <p style="font-size: 80%; color: #839496;">Real-world business data: production records, sales</p>
       </section>
 
-      <!-- Step 3: Basic Exploration -->
+      <!-- Basic Exploration -->
       <section data-background="#073642">
         <h2 style="color: #b58900;">Basic Data Exploration</h2>
         <pre><code class="language-python">
@@ -94,65 +100,49 @@ print(df.columns)
 
 # Summary statistics
 print(df.describe())
-
-# Data types and missing values
-print(df.info())
         </code></pre>
       </section>
 
-      <!-- Step 4: Data Filtering -->
+      <!-- Data Filtering -->
       <section data-background="#073642">
         <h2 style="color: #b58900;">Data Filtering Example</h2>
         <pre><code class="language-python">
-# Filter rows with 'SalePricePerUnit' > 1000
+# Filter products with SalePricePerUnit > 1000
 high_price = df[df['SalePricePerUnit'] > 1000]
 
 print(high_price.head())
-
-# Save filtered data
-high_price.to_csv('high_price.csv', index=False)
         </code></pre>
+        <p style="font-size: 80%; color: #839496;">Focus on high-value products for strategic insights</p>
       </section>
 
-      <!-- Step 5: Advanced CSV Loading -->
+      <!-- Advanced CSV Loading -->
       <section data-background="#002b36">
-        <h2 style="color: #b58900;">Advanced CSV Loading Options</h2>
+        <h2 style="color: #b58900;">Advanced CSV Loading</h2>
         <pre><code class="language-python">
-# Load only specific columns
-df_selected = pd.read_csv('business_production_data.csv', usecols=['Product', 'SalePricePerUnit'])
-
-# Load only first 100 rows
-df_small = pd.read_csv('business_production_data.csv', nrows=100)
-
-# Specify delimiter if not comma
-df_tab = pd.read_csv('business_data.tsv', delimiter='\t')
+# Load specific columns
+cols_df = pd.read_csv('business_production_data.csv', usecols=['Product', 'SalePricePerUnit'])
 
 # Parse dates automatically
-df_date = pd.read_csv('sales_data.csv', parse_dates=['OrderDate'])
-
-# Handle missing values
-df_na = pd.read_csv('business_data.csv', na_values=['?', 'NA', 'Missing'])
+sales_df = pd.read_csv('sales_data.csv', parse_dates=['OrderDate'])
         </code></pre>
       </section>
 
-      <!-- Step 6: dtype Option -->
-      <section data-background="#002b36">
-        <h2 style="color: #b58900;">Set Data Types with dtype</h2>
-        <pre><code class="language-python">
-# Enforce data types when loading
-df_types = pd.read_csv(
-    'business_production_data.csv',
-    dtype={'SalePricePerUnit': float, 'Quantity': int}
-)
-
-print(df_types.dtypes)
-        </code></pre>
+      <!-- Quick Interaction -->
+      <section data-background="#073642">
+        <h2 style="color: #b58900;">Quick Question</h2>
+        <p style="color: #839496; font-size: 120%;">
+          Why might we load only specific columns?
+        </p>
+        <ul>
+          <li class="fragment">Focus on relevant data</li>
+          <li class="fragment">Reduce memory usage</li>
+          <li class="fragment">Faster processing</li>
+        </ul>
       </section>
 
       <!-- Thank You Slide -->
       <section data-background-color="#073642">
-        <h2>Questions?</h2>
-        <p class="footer"></p>
+        <h2 style="color: #b58900;">Questions?</h2>
       </section>
 
     </div>
