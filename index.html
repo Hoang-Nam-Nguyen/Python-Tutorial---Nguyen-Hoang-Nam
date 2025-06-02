@@ -74,8 +74,10 @@
         <pre><code class="language-python">
 import pandas as pd
 import os
+import matplotlib.pyplot as plt
         </code></pre>
         <p style="font-size: 80%; color: #839496;">Pandas: powerful data analysis library in Python</p>
+        <p style="font-size: 80%; color: #839496;">Matplotlib: quick charts and plots</p>
       </section>
 
       <!-- Load CSV -->
@@ -103,6 +105,29 @@ print(df.describe())
         </code></pre>
       </section>
 
+      <!-- Check Missing Data -->
+      <section data-background="#073642">
+        <h2 style="color: #b58900;">Check for Missing Data</h2>
+        <pre><code class="language-python">
+# Check for missing values
+print(df.isnull().sum())
+        </code></pre>
+        <p style="font-size: 80%; color: #839496;">Important step before analysis</p>
+      </section>
+
+      <!-- Handle Missing Data -->
+      <section data-background="#073642">
+        <h2 style="color: #b58900;">Handling Missing Data</h2>
+        <pre><code class="language-python">
+# Drop rows with missing values
+df_clean = df.dropna()
+
+# Fill missing values with 0
+df_filled = df.fillna(0)
+        </code></pre>
+        <p style="font-size: 80%; color: #839496;">Two common methods: Drop or Fill</p>
+      </section>
+
       <!-- Data Filtering -->
       <section data-background="#073642">
         <h2 style="color: #b58900;">Data Filtering Example</h2>
@@ -113,6 +138,43 @@ high_price = df[df['SalePricePerUnit'] > 1000]
 print(high_price.head())
         </code></pre>
         <p style="font-size: 80%; color: #839496;">Focus on high-value products for strategic insights</p>
+      </section>
+
+      <!-- GroupBy Example -->
+      <section data-background="#073642">
+        <h2 style="color: #b58900;">GroupBy Example</h2>
+        <pre><code class="language-python">
+# Group by Product Category and calculate average SalePricePerUnit
+avg_price = df.groupby('ProductCategory')['SalePricePerUnit'].mean()
+
+print(avg_price)
+        </code></pre>
+        <p style="font-size: 80%; color: #839496;">Summarize data by groups</p>
+      </section>
+
+      <!-- Simple Visualization -->
+      <section data-background="#073642">
+        <h2 style="color: #b58900;">Quick Visualization</h2>
+        <pre><code class="language-python">
+# Bar chart of average sale price per category
+avg_price.plot(kind='bar')
+plt.title('Average Sale Price per Category')
+plt.ylabel('Sale Price')
+plt.show()
+        </code></pre>
+        <p style="font-size: 80%; color: #839496;">First insights with simple plots</p>
+      </section>
+
+      <!-- Load Only Specific Columns -->
+      <section data-background="#073642">
+        <h2 style="color: #b58900;">Load Specific Columns</h2>
+        <pre><code class="language-python">
+# Load only specific columns
+df_selected = pd.read_csv('business_production_data.csv', usecols=['ProductName', 'SalePricePerUnit'])
+
+print(df_selected.head())
+        </code></pre>
+        <p style="font-size: 80%; color: #839496;">Load only what you need to save memory</p>
       </section>
 
       <!-- Quick Interaction -->
@@ -126,6 +188,19 @@ print(high_price.head())
           <li class="fragment">Reduce memory usage</li>
           <li class="fragment">Faster processing</li>
         </ul>
+      </section>
+
+      <!-- Backup Slide: Change Working Directory -->
+      <section data-background="#073642">
+        <h2 style="color: #b58900;">(Backup) Change Working Directory</h2>
+        <pre><code class="language-python">
+# Change directory if file not found
+os.chdir('path/to/your/directory')
+
+# Verify
+print(os.getcwd())
+        </code></pre>
+        <p style="font-size: 80%; color: #839496;">Useful if file is not in current directory</p>
       </section>
 
       <!-- Thank You Slide -->
