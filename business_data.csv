@@ -1,0 +1,6 @@
+CustomerID,CustomerName,Country,Product,Quantity,PricePerUnit,TotalPrice
+1001,Alice Johnson,USA,Laptop,2,1200,2400
+1002,Bob Smith,Canada,Tablet,5,300,1500
+1003,Charlie Lee,UK,Smartphone,1,800,800
+1004,Dana White,Australia,Monitor,3,200,600
+1005,Eva Green,Germany,Keyboard,10,50,500
